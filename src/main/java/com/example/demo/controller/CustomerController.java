@@ -5,6 +5,8 @@ import com.example.demo.exception.ResourceNotFoundException;
 import com.example.demo.repository.CustomerRepository;
 import com.example.demo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,6 +34,7 @@ public class CustomerController {
 
     @RequestMapping(value = "/customer",
                     method = RequestMethod.POST)
+    @CachePut(value = "Customer")
     public CustomerModel setCustomer(@RequestBody CustomerModel customer) {
         return customerService.setCustomerService(customer);
     }

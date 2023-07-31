@@ -4,7 +4,6 @@ package com.example.demo.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.experimental.Accessors;
-import org.springframework.data.redis.core.RedisHash;
 
 import java.io.Serializable;
 import java.util.Set;

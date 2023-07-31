@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hazelcast xmlns="http://www.hazelcast.com/schema/config"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="https://hazelcast.com/schema/config
+           https://hazelcast.com/schema/config/hazelcast-config-5.3.xsd">
+
+<!--    <group>-->
+<!--        <name>boot-micro-services</name>-->
+<!--        <password>micro-services-pwd</password>-->
+<!--    </group>-->
+
+<!--    <map name="userInfo">-->
+<!--        <time-to-live-seconds>315360000</time-to-live-seconds> &lt;!&ndash; Maximum time in seconds for each entry to stay in the map &ndash;&gt;-->
+<!--        <max-idle-seconds>14400</max-idle-seconds> &lt;!&ndash; Maximum time in seconds for each entry to stay idle in the map. 4 hours here &ndash;&gt;-->
+<!--        <eviction-policy>LFU</eviction-policy> &lt;!&ndash; The entries least frequently used will be evicted &ndash;&gt;-->
+<!--        <max-size>20000</max-size> &lt;!&ndash; Maximum size of the userInfo map &ndash;&gt;-->
+<!--        <eviction-percentage>25</eviction-percentage> &lt;!&ndash; When max-size is reached, the specified percentage of the map will be evicted. &ndash;&gt;-->
+<!--    </map>-->
+
+    <network>
+        <join>
+            <multicast enabled="false"/>
+            <tcp-ip enabled="true">
+                <member>127.0.0.1</member>
+                <!--<member>127.0.0.1-21</member>-->
+            </tcp-ip>
+        </join>
+    </network>
+
+</hazelcast>

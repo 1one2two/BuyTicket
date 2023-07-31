@@ -2,8 +2,6 @@ package com.example.demo.controller;
 
 import com.example.demo.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.data.redis.core.script.RedisScript;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,22 +16,24 @@ import java.util.Collections;
 @RestController
 public class TestController {
 
-    @Autowired
-    StringRedisTemplate stringRedisTemplate;
+//    @Autowired
+//    StringRedisTemplate stringRedisTemplate;
 
-    @Autowired
-    private RedisScript<String> flashSaleScript;
+//    @Autowired
+//    private RedisScript<String> flashSaleScript;
 
     @GetMapping("/test/{id}")
     public String test(@PathVariable Long id) {
-        String result = stringRedisTemplate.execute(flashSaleScript, Collections.singletonList("flash_sale_result2"), id.toString());
+//        String result = stringRedisTemplate.execute(flashSaleScript, Collections.singletonList("flash_sale_result2"), id.toString());
+//
+//        if (result.startsWith("success-"))
+//            return result;
+//        else
+//            throw new ResponseStatusException(
+//                    HttpStatus.NOT_FOUND, "not found"
+//            );
 
-        if (result.startsWith("success-"))
-            return result;
-        else
-            throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND, "not found"
-            );
+        return "QQ";
 
     }
 }
